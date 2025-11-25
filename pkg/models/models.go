@@ -18,3 +18,20 @@ type UserPreferences struct {
 	Likes        string // данные, что нравится в еде
 	Dislikes     string // данные, что не нравится в еде
 }
+
+// Константы состояний для конечного автомата (FSM)
+const (
+	StateMain           = "main"
+	StateCategory       = "category"
+	StateWaitingInput   = "waiting_input"
+	StateResult         = "result"
+	StateHelp           = "help"
+	StateSettings       = "settings"
+	StateSettingsDiet   = "settings_diet"
+	StateSettingsAllerg = "settings_allergies"
+	StateSettingsGoal     = "settings_goal"
+	StateSettingsHabits   = "settings_habits"
+	StateSettingsHabitsLikes   = "settings_habits_likes"
+	StateSettingsHabitsDislikes = "settings_habits_dislikes"
+	StateSettingsClearConfirm   = "settings_clear_confirm"
+)
