@@ -43,4 +43,18 @@ func main() {
 	if err != nil {
 		log.Fatalf("Не удалось создать бота: %v", err)
 	}
+
+	// Настройка корректного завершения работы
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	// Обработка системных сигналов (например, Ctrl+C) для безопасного завершения
+	sigChan := make(chan os.Signal, 1)
+	signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM)
+
+	go func() {
+		sig := <-sigChan
+		log.Printf("Получен сигнал: %v. Выполняется безопасное завершение...", sig)
+		cancel() // Отмена контекста, чтобы остановить бота
+	}()
 }
