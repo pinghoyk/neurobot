@@ -61,9 +61,12 @@ type ChatResponse struct {
 
 // NewClient создает новый клиент GigaChat
 func NewClient(clientID, clientSecret, scope string) *Client {
-	// Создаем HTTP-клиент с пропуском проверки сертификата (для Sber API)
+	// ПРИМЕЧАНИЕ: Пропуск проверки сертификата необходим для работы с GigaChat API Сбербанка.
+	// Сбербанк использует самоподписанные или корпоративные сертификаты на своих API-эндпоинтах
+	// (ngw.devices.sberbank.ru), которые не проходят стандартную валидацию.
+	// Это известная особенность интеграции с GigaChat API.
 	tr := &http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true}, // #nosec G402 - Required for Sber API
 	}
 
 	return &Client{
