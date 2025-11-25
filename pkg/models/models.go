@@ -21,10 +21,7 @@ type UserPreferences struct {
 
 // Константы состояний для конечного автомата (FSM)
 const (
-	StateMain           = "main"
-	StateCategory       = "category"
-	StateWaitingInput   = "waiting_input"
-	StateResult         = "result"
+	StateMain           = "main"	
 	StateHelp           = "help"
 	StateSettings       = "settings"
 	StateSettingsDiet   = "settings_diet"
@@ -34,4 +31,5 @@ const (
 	StateSettingsHabitsLikes   = "settings_habits_likes"
 	StateSettingsHabitsDislikes = "settings_habits_dislikes"
 	StateSettingsClearConfirm   = "settings_clear_confirm"
+	StateGenerating     = "generating"
 )
