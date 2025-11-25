@@ -36,4 +36,11 @@ func main() {
 		cfg.GigaChatSecret,
 		cfg.GigaChatScope,
 	)
+
+	// Создание бота
+	log.Println("Создание бота...")
+	telegramBot, err := bot.New(cfg.TelegramBotToken, db, gigachatClient)
+	if err != nil {
+		log.Fatalf("Не удалось создать бота: %v", err)
+	}
 }
