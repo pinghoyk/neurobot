@@ -28,4 +28,12 @@ func main() {
 		log.Fatalf("Не удалось создать базу данных: %v", err)
 	}
 	defer db.Close() // Закрыть соединение с БД при завершенииы
+
+	// Создание клиента GigaChat
+	log.Println("Создание клиента GigaChat...")
+	gigachatClient := gigachat.NewClient(
+		cfg.GigaChatClientID,
+		cfg.GigaChatSecret,
+		cfg.GigaChatScope,
+	)
 }
