@@ -57,4 +57,12 @@ func main() {
 		log.Printf("Получен сигнал: %v. Выполняется безопасное завершение...", sig)
 		cancel() // Отмена контекста, чтобы остановить бота
 	}()
+
+	// Запуск бота
+	log.Println("Запуск бота...")
+	if err := telegramBot.Start(ctx); err != nil {
+		log.Fatalf("Ошибка бота: %v", err)
+	}
+
+	log.Println("Бот успешно остановлен")
 }
