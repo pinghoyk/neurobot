@@ -46,7 +46,7 @@ func Load() (*Config, error) {
 	return cfg, nil
 }
 
-//Либо берем значения переменных, либо вставляем безопасные значения
+// Либо берем значения переменных, либо вставляем безопасные значения
 func getEnvOrDefault(key, defaultValue string) string {
 	if value := os.Getenv(key); value != "" {
 		return value

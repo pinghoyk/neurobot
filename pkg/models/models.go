@@ -11,25 +11,25 @@ type UserState struct {
 
 // UserPreferences представляет кулинарные предпочтения пользователя
 type UserPreferences struct {
-	UserID       int64
-	DietaryType  string // обычное, похудение, набор веса
-	Goal         string // цель: (напр., похудеть на 3 кг)
-	Allergies    string // данные, на что аллергия
-	Likes        string // данные, что нравится в еде
-	Dislikes     string // данные, что не нравится в еде
+	UserID      int64
+	DietaryType string // обычное, похудение, набор веса
+	Goal        string // цель: (напр., похудеть на 3 кг)
+	Allergies   string // данные, на что аллергия
+	Likes       string // данные, что нравится в еде
+	Dislikes    string // данные, что не нравится в еде
 }
 
 // Константы состояний для конечного автомата (FSM)
 const (
-	StateMain           = "main"	
-	StateHelp           = "help"
-	StateSettings       = "settings"
-	StateSettingsDiet   = "settings_diet"
-	StateSettingsAllerg = "settings_allergies"
-	StateSettingsGoal     = "settings_goal"
-	StateSettingsHabits   = "settings_habits"
-	StateSettingsHabitsLikes   = "settings_habits_likes"
+	StateMain                   = "main"
+	StateHelp                   = "help"
+	StateSettings               = "settings"
+	StateSettingsDiet           = "settings_diet"
+	StateSettingsAllerg         = "settings_allergies"
+	StateSettingsGoal           = "settings_goal"
+	StateSettingsHabits         = "settings_habits"
+	StateSettingsHabitsLikes    = "settings_habits_likes"
 	StateSettingsHabitsDislikes = "settings_habits_dislikes"
 	StateSettingsClearConfirm   = "settings_clear_confirm"
-	StateGenerating     = "generating"
+	StateGenerating             = "generating"
 )
